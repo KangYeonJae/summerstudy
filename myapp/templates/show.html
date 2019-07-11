@@ -1,0 +1,10 @@
+<h5><a href="{% url 'post' %}"><글 작성하러 가기></a></h5>
+{%for myapp in myapps.all%}
+    <div class="container">
+        <a href="{% url 'detail' myapp.id %}">
+            <ins>제목: <em>{{myapp.title}}</em></ins> <!--밑줄&기울이기-->
+        </a>
+        <p>내용: {{myapp.body}}</p>
+        <small class="text-muted">{{myapp.pub_date}}</small>
+    </div>
+{%endfor%}
