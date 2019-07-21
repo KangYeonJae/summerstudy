@@ -12,3 +12,8 @@ class Myapp(models.Model):
     def summary(self):
         return self.body[:50]
 
+class Comment(models.Model):
+    myapp=models.ForeignKey(Myapp,on_delete=models.CASCADE,related_name='comments')
+    text=models.CharField(max_length=200)
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now=True)
