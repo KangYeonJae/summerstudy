@@ -30,7 +30,6 @@ def show(request):
     return render(request, 'show.html', {'myapps':myapps})
 
 
-#디테일 페이지에 댓글 
 def detail(request, myapp_id):
     myapp_detail =get_object_or_404(Myapp, pk=myapp_id)
     if request.method=="POST":
